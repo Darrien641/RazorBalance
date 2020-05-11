@@ -1,0 +1,24 @@
+﻿@page
+@model TemperatureModel
+@{
+
+    ViewData["Title"] = "Temperature Conversion";
+}
+
+    <div>
+        <form method="post">
+            <label>Conversion Method:</label>
+            <select name="TempDrop">
+                <option selected="selected" value="1">Ferenheit to Celcius</option>
+                <option value="2">Celcius to Ferenheit</option>
+            </select>
+            <br />
+            <label>Enter Temperature to Convert: </label>
+            <input type="text" name="TempConversion" size="5" />
+            <input type="submit" value="Convert" />
+            <br />
+
+        </form>
+        <label>@Model.Message Conversion Result: </label>
+        @string.Format("{0:0.###}", Model.TempConversion)°
+    </div>

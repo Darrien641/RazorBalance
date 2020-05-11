@@ -1,0 +1,28 @@
+﻿@page
+@using System.IO
+@model MassModel
+@{
+    ViewData["Title"] = "Calculate Mass";
+}
+
+<div>
+
+    <form method="post">
+        <label>Conversion Method:</label>
+        <select name="MassDrop">
+            <option selected="selected" value="1">Pounds to Ounces</option>
+            <option value="2">Ounces to Pounds</option>
+            <option value="3">Grams to Pounds</option>
+            <option value="4">Milligrams to Pounds</option>
+        </select>
+        <br />
+        <label>Enter Mass to Convert: </label>
+        <input type="text" name="MassConversion" size="5" />
+        <input type="submit" value="Convert" />
+        <br />
+
+    </form>
+    <label>@Model.Message Conversion Result:</label>
+    @string.Format("{0:0.######}", Model.MassConversion)
+
+</div>

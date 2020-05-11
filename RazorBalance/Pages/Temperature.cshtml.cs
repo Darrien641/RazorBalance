@@ -26,7 +26,7 @@ namespace RazorBalance.Pages
             get { return tempDrop; }
             set { tempDrop = value; }
         }
-        public string Message { get; set; } = "F to C";
+        public string ConvertMethod { get; set; } = "F to C";
         public TemperatureModel(ILogger<TemperatureModel> logger)
         {
 
@@ -40,7 +40,7 @@ namespace RazorBalance.Pages
             DropCheck();
         } 
         public void FtoC() 
-        {
+        {   
             TempConversion = (TempConversion - 32) * 5 / 9;
         }
         public void CtoF()
@@ -50,7 +50,7 @@ namespace RazorBalance.Pages
         public void DropCheck()
         {
             if (TempDrop == 1)
-            { 
+            {
                 FtoC();
             }
             else {
@@ -58,6 +58,7 @@ namespace RazorBalance.Pages
                 CtoF();
                 Message = "C to F";
             }
+            
         }
     }
 }
